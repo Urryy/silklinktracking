@@ -1,0 +1,85 @@
+﻿@{
+	Layout = null;
+}
+
+<div class="modal" tabindex="-1" role="dialog" id="modalUpdate">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post" asp-controller="NumberTracks" asp-action="Update" id="formUpdate">
+                <div class="modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-cargo-card" id="saveUpdateBtn">Обновить трек-код</button>
+                    <button type="button" class="btn btn-secondary" id="closeUpdateBtn" data-dismiss="modal">Закрыть</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    let updateObject = {};
+    $('#closeUpdateBtn').on("click", () => {
+        console.log('hide hide');
+        $('#modalUpdate').modal('hide');
+    });
+    $('.close').on("click", () => {
+        $('#modalUpdate').modal('hide');
+    });
+
+    function openUpdateModal(parametrs) {
+        controllerObj = parametrs.controllerObject;
+        const modal = $('#modalUpdate');
+        if (controllerObj === undefined || parametrs.id === undefined) {
+            alert('Упссс.... что-то пошло не так')
+            return;
+        }
+
+         $.ajax({
+            type: 'GET',
+            url: "/NumberTracks/Update",
+            data: { "id": parametrs.id },
+            success: function (response) {
+                modal.find(".modal-body").html(response);
+                modal.modal('show')
+            },
+            failure: function () {
+                modal.modal('hide')
+            },
+            error: function (response) {
+                alert(response.responseText);
+            }
+        });
+
+        
+
+        modal.find(".modal-title").html("<h3>Обновление трек-кода</h3>");
+        modal.modal('show');
+    };
+
+    $('#saveUpdateBtn').on("click", (e) => {
+        e.preventDefault();
+        var dataObjectUpdate = $('#formUpdate').serializeArray().reduce(function (obj, item) {
+            obj[item.name] = item.value;
+            return obj;
+        }, {});
+        console.log(dataObjectUpdate);
+
+        if (!dataObjectUpdate['input-cargo-input-trackcode'] || !dataObjectUpdate['textarea-cargo-textarea'] ||
+            !dataObjectUpdate['input-cargo-input-id'] || !dataObjectUpdate['select-cargo-select-state']) {
+            alert('Были введены не все данные');
+        }
+        updateObject.id = dataObjectUpdate['input-cargo-input-id'];
+        updateObject.numberTrackCode = dataObjectUpdate['input-cargo-input-trackcode'];
+        updateObject.stateName = dataObjectUpdate['select-cargo-select-state'];
+        updateObject.description = dataObjectUpdate['textarea-cargo-textarea'];
+        
+        controllerObj.Update(updateObject);
+    });
+</script>

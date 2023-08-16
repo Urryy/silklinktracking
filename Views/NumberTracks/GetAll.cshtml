@@ -1,0 +1,23 @@
+﻿@model IEnumerable<cargosiklink.Models.ViewModel.NumberTrack.NumberTrackViewModel>;
+@foreach (var numberTrack in Model)
+{
+    <div class="cargo-main-container">
+        <div class="card text-center">
+            <div class="card-header">
+                Статус: <span class="cargo-font">@numberTrack.StateName</span>
+            </div>
+            <div class="card-body"style="background-color:@numberTrack.Color">
+                <h5 class="card-title">Номер: <span class="cargo-font">@numberTrack.NumberTrackCode</span></h5>
+                <p class="card-text">Описание: <span class="cargo-font">@numberTrack.Description</span></p>
+                <div class="card-body-container">
+                    <a class="btn btn-danger cargo-font" asp-controller="NumberTracks" asp-action="Delete" asp-route-id="@numberTrack.Id">Удалить</a>
+                    <a class="btn btn-cargo-card cargo-font" onclick="openUpdateModal({ controllerObject: numberTracks, id: '@numberTrack.Id' })" id="updateBtn">Изменить</a>
+                </div>
+            </div>
+            <div class="card-footer text-muted">
+                Дата: <span class="cargo-font">@numberTrack.Date</span>
+            </div>
+        </div>
+    </div>
+}
+

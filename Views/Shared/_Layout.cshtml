@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - cargosiklink</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/cargosiklink.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <div class="navbar-brand cargos-title">&nbsp;
+                    @if (User.Identity.IsAuthenticated)
+                    {   <a class="navbar-brand cargos-title" asp-area="" asp-controller="NumberTracks" asp-action="Index"></a>   }
+                    else
+                    {   <a class="navbar-brand cargos-title" asp-area="" asp-controller="" asp-action=""></a>   }
+                </div>
+                <div class="btn-group dropstart">
+                    <button type="button" class="btn dropdown-toggle cargos-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                        Личный кабинет
+                    </button>
+                    @if(!User.Identity.IsAuthenticated){
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-controller="Home" asp-action="Index">Вход</a></li>
+                            <li><a class="dropdown-item" asp-controller="Home" asp-action="Privacy">Восстановление пароля</a></li>
+                        </ul>
+                    }
+                    else
+                    {
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-controller="Account" asp-action="Logout">Выход из системы</a></li>
+                            <li><a class="dropdown-item" asp-controller="Account" asp-action="InfoAboutUser">Данные о пользователе</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" asp-controller="Account" asp-action="ChangePassword">Сменить пароль</a></li>
+                            @if (User.IsInRole("admin"))
+                            {
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" asp-controller="Account" asp-action="Register">Регистрация пользователя</a></li>
+                                <li><a class="dropdown-item" asp-controller="NumberTracks" asp-action="GetAll">Товары</a></li>
+                            }
+                        </ul>
+                    }
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await Html.PartialAsync("../ViewModal/ModalDelete");
+    @await Html.PartialAsync("../ViewModal/ModalCreate");
+    @await Html.PartialAsync("../ViewModal/ModalUpdate");
+    <script src="~/js/NumberTracks.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    <script>
+        let numberTracks = new NumberTracks();
+    </script>
+</body>
+</html>

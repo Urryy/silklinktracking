@@ -1,0 +1,114 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.cargos-title {
+    background-color:none;
+    background: url("../img/cargotitleicon.png") no-repeat 2% 0% fixed;
+    background-size:102px 92px;
+    width: 160px;
+    height: 68px;
+    display: block;
+}
+
+.cargo-main-title {
+    max-width: 350px;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    padding-top: 3rem !important;
+}
+.btn-cargo {
+    padding:15px;
+    color:aliceblue;
+    background-color: #39c97e;
+    border-color: #39c97e;
+    transition: .45s;
+    width: 100%;
+}
+.btn-cargo:hover {
+    color: aliceblue;
+    transition: .45s;
+    box-shadow: #39c97e 0px 5px 22px;
+}
+#input-cargo-password {
+    margin-bottom:30px;
+}
+.input-cargo {
+    padding: 15px;
+}
+
+.btn-group-vertical > .btn, .btn-group > .btn {
+    position: relative;
+    flex: 1 1 auto;
+}
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+.dropdown-toggle {
+    white-space: nowrap;
+}
+.cargos-btn {
+    color: #000;
+    background-color: none;
+}
+.btn-cargo-card {
+    margin-left: 12px;
+    color: aliceblue;
+    background-color: #39c97e;
+    border-color: #39c97e;
+    transition: .45s;
+}
+.btn-cargo-card:hover {
+    color: aliceblue;
+    transition: .45s;
+    box-shadow: #39c97e 0px 5px 22px;
+}
+.cargo-font {
+    font-weight: 600;
+}
+.card-body-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.cargo-main-container{
+    margin: 15px auto;
+}
+.card {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+button.close {
+    border: none;
+    background-color: #fff;
+}
+
+#btnCreateCode {
+    margin: 2% 0 -8% 85%;
+    padding: 15px;
+    background-color: rgba(0,0,0,.03);
+    color: #39c97e;
+}
+
+@media (max-width: 480px) {
+    #btnCreateCode {
+        margin: 2% 0 2% 0%;
+        width: 100%;
+    }
+}

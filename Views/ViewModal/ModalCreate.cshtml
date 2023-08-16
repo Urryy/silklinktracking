@@ -1,0 +1,73 @@
+﻿@{
+	Layout = null;
+}
+
+<div class="modal" tabindex="-1" role="dialog" id="modalCreate">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post" asp-controller="NumberTracks" asp-action="Create" id="formCreate">
+                <div class="modal-body">
+                    <div asp-validation-summary="All" style="font-size:22px;"></div>
+                    <div class="mb-3">
+                        <label for="input-cargo-input-trackcode" class="form-label">Трек-номер:</label>
+                        <input type="text" class="form-control input-cargo" id="input-cargo-trackcode" name="input-cargo-input-trackcode" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="textarea-cargo-textarea">Описание:</label>
+                        <textarea class="form-control" id="textarea-cargo-textarea" name="textarea-cargo-textarea" rows="5" cols="33" required></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-cargo-card" id="saveCreateBtn">Создать трек-код</button>
+                    <button type="button" class="btn btn-secondary" id="closeCreateBtn" data-dismiss="modal">Закрыть</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    let createObject = {};
+    $('#closeCreateBtn').on("click", () => {
+        console.log('hide hide');
+        $('#modalCreate').modal('hide');
+    });
+    $('.close').on("click", () => {
+        $('#modalCreate').modal('hide');
+    });
+
+    function openCreateModal(controllerObject) {
+        controllerObj = controllerObject;
+        const modal = $('#modalCreate');
+
+        if (controllerObject === undefined) {
+            alert('Упссс.... что-то пошло не так')
+            return;
+        }
+
+        modal.find(".modal-title").html("<h3>Создание трек-кода</h3>");
+        modal.modal('show');
+    };
+
+    $('#saveCreateBtn').on("click", (e) => {
+        e.preventDefault();
+        var dataObjectCreate = $('#formCreate').serializeArray().reduce(function (obj, item) {
+            obj[item.name] = item.value;
+            return obj;
+        }, {});
+        console.log(dataObjectCreate['input-cargo-input-trackcode']);
+
+        if (!dataObjectCreate['input-cargo-input-trackcode'] || !dataObjectCreate['textarea-cargo-textarea']) {
+            alert('Были введены не все данные');
+        }
+        createObject.numberTrackCode = dataObjectCreate['input-cargo-input-trackcode'];
+        createObject.description = dataObjectCreate['textarea-cargo-textarea'];
+        controllerObj.Create(createObject);
+    });
+</script>

@@ -1,0 +1,81 @@
+﻿@{
+	Layout = null;
+}
+
+<div class="modal" tabindex="-1" role="dialog" id="modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-cargo-card" id="saveBtn">Сохранить</button>
+        <button type="button" class="btn btn-secondary" id="closeBtn" data-dismiss="modal" >Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    let idObject = null;
+    let controllerObj = null;
+
+    $("#closeBtn").on("click", () => {
+        $('#modal').modal('hide');
+    });
+    $('.close').on("click", () => {
+        $('#modal').modal('hide');
+    });
+
+    function openModal(parameters) {
+        const id = parameters.data;
+        const url = parameters.url;
+        const modal = $('#modal');
+
+        if (id === undefined || url === undefined) {
+            alert('Упссс.... что-то пошло не так')
+            return;
+        }
+
+        $.ajax({
+            type: 'GET',
+            url: url,
+            data: { "id": id },
+            success: function (response) {
+                modal.find(".modal-body").html(response);
+                modal.modal('show')
+            },
+            failure: function () {
+                modal.modal('hide')
+            },
+            error: function (response) {
+                alert(response.responseText);
+            }
+        });
+    };
+
+    function openDeleteModal(parameters) {
+        idObject = parameters.data;
+        controllerObj = parameters.object;
+        const modal = $('#modal');
+
+        if (parameters.data === undefined || parameters.object === undefined) {
+            alert('Упссс.... что-то пошло не так')
+            return;
+        }
+        modal.find(".modal-title").html("<h3>Удаление</h3>");
+        modal.find(".modal-body").html("<p>Вы действительно хотите удалить данный номер?</p>");
+        modal.modal('show');
+    };
+
+    $('#saveBtn').on("click", (e) => {
+        e.preventDefault();
+        controllerObj.Delete(idObject);
+    });
+</script>

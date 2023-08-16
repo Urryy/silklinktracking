@@ -1,0 +1,26 @@
+﻿@using cargosiklink.Models.Const;
+@model cargosiklink.Models.ViewModel.NumberTrack.NumberTrackViewModel;
+
+@{
+	Layout = null;
+}
+
+<div asp-validation-summary="All" style="font-size:22px;"></div>
+<input name="input-cargo-input-id" value="@Model.Id" hidden/>
+<div class="mb-3">
+    <label for="input-cargo-input-trackcode" class="form-label">Трек-номер:</label>
+    <input type="text" class="form-control input-cargo" id="input-cargo-trackcode" name="input-cargo-input-trackcode" value="@Model.NumberTrackCode" required>
+</div>
+<div class="mb-3">
+    <label for="select-cargo-select-state">Статус:</label>
+    <select class="form-select input-cargo" aria-label="Default select example" name="select-cargo-select-state" required>
+        <option selected disabled hidden>@Model.StateName</option>
+        <option value="@StateConst.StateAddByUser">Добавлено пользователем</option>
+        <option value="@StateConst.StateDestinationCountry">Прибыло в страну назначения</option>
+        <option value="@StateConst.StateArrived">Отправлено в страну назначения</option>
+    </select>
+</div>
+<div class="mb-3">
+    <label for="textarea-cargo-textarea">Описание:</label>
+    <textarea class="form-control" id="textarea-cargo-textarea" name="textarea-cargo-textarea" rows="5" cols="33" required>@Model.Description</textarea>
+</div>

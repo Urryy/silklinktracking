@@ -1,0 +1,24 @@
+﻿@model cargosiklink.Models.ViewModel.Account.LoginViewModel;
+
+@{
+    ViewData["Title"] = "Login Page";
+}
+
+<div class="cargo-main-container">
+    <h1 class="display-6 text-center cargo-main-title">Вход для зарегистрированного пользователя</h1><br />
+    <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4 d-block mx-auto">
+        <form method="post" asp-controller="Account" asp-action="Login">
+            <div asp-validation-summary="All" style="font-size:23px;"></div>
+            <div class="mb-3">
+                <label for="input-cargo-login" class="form-label">Логин</label>
+                <input asp-for="Login" type="text" class="form-control input-cargo" id="input-cargo-login">
+            </div>
+            <div class="mb-3">
+                <label for="input-cargo-password" class="form-label">Пароль</label>
+                <input asp-for="Password" type="password" class="form-control input-cargo" id="input-cargo-password">
+            </div>
+            <button type="submit" class="btn btn-cargo">Вход</button>
+        </form>
+    </div>
+</div>
+
