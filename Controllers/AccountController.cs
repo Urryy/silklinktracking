@@ -75,16 +75,25 @@ namespace cargosiklink.Controllers
         }
         public async Task<IActionResult> Login(LoginViewModel loginViewModel)
         {
-            if(loginViewModel.Login == string.Empty || loginViewModel.Password == string.Empty)
-                return NotFound();
+            try
+            {
+                if (loginViewModel.Login == string.Empty || loginViewModel.Password == string.Empty)
+                    return NotFound();
+
+                var claims = await _accountService.Login(loginViewModel);
+
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                            new ClaimsPrincipal(claims));
+                ViewBag.UserId = await _accountService.GetUserId(User.Identity.Name);
+
+                return RedirectToAction("Index", "NumberTracks");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
             
-            var claims = await _accountService.Login(loginViewModel);
-
-            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
-                        new ClaimsPrincipal(claims));
-            ViewBag.UserId = await _accountService.GetUserId(User.Identity.Name);
-
-            return RedirectToAction("Index", "NumberTracks");
         }
         public async Task<IActionResult> Logout()
         {

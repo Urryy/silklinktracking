@@ -188,3 +188,4 @@ E:\silklink\silklinktracking\obj\Debug\net6.0\refint\cargosiklink.dll
 E:\silklink\silklinktracking\obj\Debug\net6.0\cargosiklink.pdb
 E:\silklink\silklinktracking\obj\Debug\net6.0\cargosiklink.genruntimeconfig.cache
 E:\silklink\silklinktracking\obj\Debug\net6.0\ref\cargosiklink.dll
+E:\silklink\silklinktracking\bin\Debug\net6.0\appsettings.Production.json
