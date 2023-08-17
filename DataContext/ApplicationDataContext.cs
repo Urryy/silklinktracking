@@ -10,6 +10,8 @@ public class ApplicationDataContext : DbContext
 	public DbSet<User> Users { get; set; }
     public DbSet<NumberTrack> NumberTracks { get; set; }
     public DbSet<State> States { get; set; }
+
+
 	public ApplicationDataContext(DbContextOptions<ApplicationDataContext> opt) : base(opt)
 	{
 		Database.EnsureCreated();
