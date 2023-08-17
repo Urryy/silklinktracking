@@ -18,7 +18,7 @@ public class ApplicationDataContext : DbContext
 	{
         modelBuilder.Entity<User>(builder =>
         {
-            builder.HasData(new User("yatsko19791@gmail.com", HashPasswordHelper.HashPassword("zxKlasd1jvSn"), "yatsko19791@gmail.com", "+7827312513", "admin", "Moscow", Models.Enum.Roles.admin));
+            builder.HasData(new User("jobandprojects@gmail.com", HashPasswordHelper.HashPassword("zxKlasd1jvSn"), "jobandprojects@gmail.com", "+7827312513", "admin", "Moscow", Models.Enum.Roles.admin));
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).ValueGeneratedOnAdd();
 
@@ -34,7 +34,6 @@ public class ApplicationDataContext : DbContext
 
         modelBuilder.Entity<NumberTrack>(builder =>
         {
-            builder.HasData(new NumberTrack("12351212351322", "Пневматическое оружие", StateConst.StateAddByUser, Guid.Parse("CCA9E16A-AA52-4D92-9C20-34D67B2F409D")));
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).ValueGeneratedOnAdd();
 
