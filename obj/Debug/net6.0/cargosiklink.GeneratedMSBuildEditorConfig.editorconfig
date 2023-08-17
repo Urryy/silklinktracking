@@ -9,73 +9,73 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = cargosiklink
 build_property.RootNamespace = cargosiklink
-build_property.ProjectDir = E:\EGZAMIN.NET\cargosiklink\cargosiklink\
+build_property.ProjectDir = E:\silklink\silklinktracking\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = E:\EGZAMIN.NET\cargosiklink\cargosiklink
+build_property.MSBuildProjectDirectory = E:\silklink\silklinktracking
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/EGZAMIN.NET/cargosiklink/cargosiklink/Views/Account/ChangePassword.cshtml]
+[E:/silklink/silklinktracking/Views/Account/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/EGZAMIN.NET/cargosiklink/cargosiklink/Views/Account/InfoAboutUser.cshtml]
+[E:/silklink/silklinktracking/Views/Account/InfoAboutUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmZvQWJvdXRVc2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/EGZAMIN.NET/cargosiklink/cargosiklink/Views/Account/Register.cshtml]
+[E:/silklink/silklinktracking/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/EGZAMIN.NET/cargosiklink/cargosiklink/Views/Home/Index.cshtml]
+[E:/silklink/silklinktracking/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/EGZAMIN.NET/cargosiklink/cargosiklink/Views/Home/Privacy.cshtml]
+[E:/silklink/silklinktracking/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/EGZAMIN.NET/cargosiklink/cargosiklink/Views/NumberTracks/GetAll.cshtml]
+[E:/silklink/silklinktracking/Views/NumberTracks/GetAll.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTnVtYmVyVHJhY2tzXEdldEFsbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/EGZAMIN.NET/cargosiklink/cargosiklink/Views/NumberTracks/Index.cshtml]
+[E:/silklink/silklinktracking/Views/NumberTracks/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTnVtYmVyVHJhY2tzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/EGZAMIN.NET/cargosiklink/cargosiklink/Views/NumberTracks/Update.cshtml]
+[E:/silklink/silklinktracking/Views/NumberTracks/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTnVtYmVyVHJhY2tzXFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/EGZAMIN.NET/cargosiklink/cargosiklink/Views/Shared/Error.cshtml]
+[E:/silklink/silklinktracking/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/EGZAMIN.NET/cargosiklink/cargosiklink/Views/Shared/_ValidationScriptsPartial.cshtml]
+[E:/silklink/silklinktracking/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/EGZAMIN.NET/cargosiklink/cargosiklink/Views/ViewModal/ModalCreate.cshtml]
+[E:/silklink/silklinktracking/Views/ViewModal/ModalCreate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlld01vZGFsXE1vZGFsQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/EGZAMIN.NET/cargosiklink/cargosiklink/Views/ViewModal/ModalDelete.cshtml]
+[E:/silklink/silklinktracking/Views/ViewModal/ModalDelete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlld01vZGFsXE1vZGFsRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/EGZAMIN.NET/cargosiklink/cargosiklink/Views/ViewModal/ModalUpdate.cshtml]
+[E:/silklink/silklinktracking/Views/ViewModal/ModalUpdate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlld01vZGFsXE1vZGFsVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/EGZAMIN.NET/cargosiklink/cargosiklink/Views/_ViewImports.cshtml]
+[E:/silklink/silklinktracking/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/EGZAMIN.NET/cargosiklink/cargosiklink/Views/_ViewStart.cshtml]
+[E:/silklink/silklinktracking/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/EGZAMIN.NET/cargosiklink/cargosiklink/Views/Shared/_Layout.cshtml]
+[E:/silklink/silklinktracking/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-hxamb3otei
