@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\EGZAMIN.NET\\cargosiklink\\cargosiklink\\cargosiklink.csproj": {}
+    "E:\\silklink\\silklinktracking\\cargosiklink.csproj": {}
   },
   "projects": {
-    "E:\\EGZAMIN.NET\\cargosiklink\\cargosiklink\\cargosiklink.csproj": {
+    "E:\\silklink\\silklinktracking\\cargosiklink.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\EGZAMIN.NET\\cargosiklink\\cargosiklink\\cargosiklink.csproj",
+        "projectUniqueName": "E:\\silklink\\silklinktracking\\cargosiklink.csproj",
         "projectName": "cargosiklink",
-        "projectPath": "E:\\EGZAMIN.NET\\cargosiklink\\cargosiklink\\cargosiklink.csproj",
+        "projectPath": "E:\\silklink\\silklinktracking\\cargosiklink.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "E:\\EGZAMIN.NET\\cargosiklink\\cargosiklink\\obj\\",
+        "outputPath": "E:\\silklink\\silklinktracking\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

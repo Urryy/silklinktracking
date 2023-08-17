@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ocpG4H23kMt9O/DbTSXa3yfIcRHRDv3Q9lKJAhiH9BxR9lJXLJlLmte94jjD+FtnluAhm9O0guEzaTvyOYl4mw==",
+  "dgSpecHash": "cy5ODc/3mVVgGm/Bgtni5HlJpuAXXX4NFvoQzXsCNaap53SqP24bjapM3sqa9dhcwujSPbqwtz5ZS8y512eL5w==",
   "success": true,
-  "projectFilePath": "E:\\EGZAMIN.NET\\cargosiklink\\cargosiklink\\cargosiklink.csproj",
+  "projectFilePath": "E:\\silklink\\silklinktracking\\cargosiklink.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
