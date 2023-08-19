@@ -44,6 +44,9 @@ public class ApplicationDataContext : DbContext
 
             builder.Property(x => x.NumberTrackCode).IsRequired();
             builder.Property(x => x.Description).IsRequired();
+            builder.Property(x => x.Weight).IsRequired();
+            builder.Property(x => x.Volume).IsRequired();
+            builder.Property(x => x.Link).IsRequired();
         });
 
         modelBuilder.Entity<State>(builder =>

@@ -14,14 +14,31 @@
             <form method="post" asp-controller="NumberTracks" asp-action="Create" id="formCreate">
                 <div class="modal-body">
                     <div asp-validation-summary="All" style="font-size:22px;"></div>
-                    <div class="mb-3">
-                        <label for="input-cargo-input-trackcode" class="form-label">Трек-номер:</label>
-                        <input type="text" class="form-control input-cargo" id="input-cargo-trackcode" name="input-cargo-input-trackcode" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="textarea-cargo-textarea">Описание:</label>
-                        <textarea class="form-control" id="textarea-cargo-textarea" name="textarea-cargo-textarea" rows="5" cols="33" required></textarea>
-                    </div>
+
+                        <div class="mb-3">
+                            <label for="input-cargo-input-trackcode" class="form-label">Трек-номер:</label>
+                            <input type="text" class="form-control input-cargo" id="input-cargo-trackcode" name="input-cargo-input-trackcode" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="input-cargo-input-weight" class="form-label">Вес:</label>
+                            <input type="text" class="form-control input-cargo" id="input-cargo-weight" name="input-cargo-input-weight" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="input-cargo-input-volume" class="form-label">Объем:</label>
+                            <input type="text" class="form-control input-cargo" id="input-cargo-volume" name="input-cargo-input-volume" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="input-cargo-input-link" class="form-label">Ссылка на товар:</label>
+                            <input type="text" class="form-control input-cargo" id="input-cargo-link" name="input-cargo-input-link" required>
+                        </div>
+                         <div class="mb-3">
+                            <label for="textarea-cargo-textarea">Описание:</label>
+                            <textarea class="form-control" id="textarea-cargo-textarea" name="textarea-cargo-textarea" rows="5" cols="33" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="comment-cargo-comment">Комментарий: </label>
+                            <textarea class="form-control" id="comment-cargo-comment" name="comment-cargo-comment" rows="5" cols="33"></textarea>
+                        </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-cargo-card" id="saveCreateBtn">Создать трек-код</button>
@@ -43,6 +60,7 @@
     });
 
     function openCreateModal(controllerObject) {
+        console.log(controllerObject);
         controllerObj = controllerObject;
         const modal = $('#modalCreate');
 
@@ -56,6 +74,7 @@
     };
 
     $('#saveCreateBtn').on("click", (e) => {
+        
         e.preventDefault();
         var dataObjectCreate = $('#formCreate').serializeArray().reduce(function (obj, item) {
             obj[item.name] = item.value;
@@ -63,10 +82,17 @@
         }, {});
         console.log(dataObjectCreate['input-cargo-input-trackcode']);
 
-        if (!dataObjectCreate['input-cargo-input-trackcode'] || !dataObjectCreate['textarea-cargo-textarea']) {
+        if (!dataObjectCreate['input-cargo-input-trackcode'] || !dataObjectCreate['textarea-cargo-textarea'] ||
+            !dataObjectCreate['input-cargo-input-weight'] || !dataObjectCreate['input-cargo-input-volume'] ||
+            !dataObjectCreate['input-cargo-input-link'] || !dataObjectCreate['textarea-cargo-textarea']) {
             alert('Были введены не все данные');
+            return;
         }
         createObject.numberTrackCode = dataObjectCreate['input-cargo-input-trackcode'];
+        createObject.weight = dataObjectCreate['input-cargo-input-weight'];
+        createObject.volume = dataObjectCreate['input-cargo-input-volume'];
+        createObject.comment = dataObjectCreate['comment-cargo-comment'];
+        createObject.link = dataObjectCreate['input-cargo-input-link'];
         createObject.description = dataObjectCreate['textarea-cargo-textarea'];
         controllerObj.Create(createObject);
     });

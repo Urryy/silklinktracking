@@ -3,7 +3,7 @@ using cargosiklink.Models.Const;
 using cargosiklink.Models.ViewModel.NumberTrack;
 using cargosiklink.Repository.Interfaces;
 using cargosiklink.Service.Interfaces;
-using System.Xml;
+using System;
 
 namespace cargosiklink.Service
 {
@@ -20,15 +20,39 @@ namespace cargosiklink.Service
         }
         public async Task<bool> CreateTrack(NumberTrackViewModel model, string name)
         {
-            var user = _userRepository.GetAll().FirstOrDefault(usr => usr.Name == name);
-            if(user == null)
+            try
             {
+                var user = _userRepository.GetAll().FirstOrDefault(usr => usr.Name == name);
+                if (user == null)
+                {
+                    return false;
+                }
+
+                if (!decimal.TryParse(model.Weight.Replace(".", ","), out decimal weight))
+                {
+                    return false;
+                }
+                if (!decimal.TryParse(model.Volume.Replace(".", ","), out decimal volume))
+                {
+                    return false;
+                }
+                var numberTrack = new NumberTrack(model.NumberTrackCode, model.Description, StateConst.StateAddByUser, user.Id, weight, volume, model.Link);
+
+                if (model.Comment != null && model.Comment != string.Empty)
+                {
+                    numberTrack.Comment = model.Comment;
+                }
+
+                await _baseRepository.Create(numberTrack);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
                 return false;
             }
             
-            var numberTrack = new NumberTrack(model.NumberTrackCode, model.Description, StateConst.StateAddByUser, user.Id);
-            await _baseRepository.Create(numberTrack);
-            return true;
         }
 
         public async Task<bool> DeleteTrack(Guid id)
@@ -81,7 +105,12 @@ namespace cargosiklink.Service
                     NumberTrackCode = track.NumberTrackCode,
                     StateName = track.State.Name,
                     Color = track.State.Color,
-                    Id = track.Id.ToString()
+                    Id = track.Id.ToString(),
+                    Weight = track.Weight.ToString(),
+                    Volume = track.Volume.ToString(),
+                    Link = track.Link.ToString(),
+                    StateId = track.StateId.ToString(),
+                    Comment = track.Comment ?? string.Empty,
                 });
                 return models;
             }
@@ -94,9 +123,27 @@ namespace cargosiklink.Service
             {
                 return false;
             }
+            if (!decimal.TryParse(model.Weight.Replace(".", ","), out decimal weight))
+            {
+                return false;
+            }
+            if (!decimal.TryParse(model.Volume.Replace(".", ","), out decimal volume))
+            {
+                return false;
+            }
+
             numberTrack.Description = model.Description;
             numberTrack.StateId = Guid.Parse(model.StateName);
             numberTrack.NumberTrackCode = model.NumberTrackCode;
+            numberTrack.Weight = weight;
+            numberTrack.Volume = volume;
+            numberTrack.Link = model.Link;
+
+            if (model.Comment != null && model.Comment != string.Empty)
+            {
+                numberTrack.Comment = model.Comment;
+            }
+
             await _baseRepository.Update(numberTrack);
             return true;
         }

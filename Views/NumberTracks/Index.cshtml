@@ -13,7 +13,10 @@
             <div class="card-body" style="background-color:@numberTrack.Color">
                 <h5 class="card-title">Номер: <span class="cargo-font">@numberTrack.NumberTrackCode</span></h5>
                 <p class="card-text">Описание: <span class="cargo-font">@numberTrack.Description</span></p>
-                <a class="btn btn-danger cargo-font" onclick="openDeleteModal({ object: numberTracks, data: '@numberTrack.Id' })" id="btnDelete">Удалить</a>
+                <div class="card-body-container">
+                    <a class="btn btn-danger cargo-font" onclick="openDeleteModal({ object: numberTracks, data: '@numberTrack.Id' })">Удалить</a>
+                    <a class="btn btn-cargo-card cargo-font" onclick="openViewModal({ controllerObject: numberTracks, id: '@numberTrack.Id' })" id="updateBtn">Просмотр</a>
+                </div>
             </div>
             <div class="card-footer text-muted">
                 Дата: <span class="cargo-font">@numberTrack.Date</span>

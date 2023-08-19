@@ -72,12 +72,22 @@
         console.log(dataObjectUpdate);
 
         if (!dataObjectUpdate['input-cargo-input-trackcode'] || !dataObjectUpdate['textarea-cargo-textarea'] ||
-            !dataObjectUpdate['input-cargo-input-id'] || !dataObjectUpdate['select-cargo-select-state']) {
+            !dataObjectUpdate['input-cargo-input-id'] || !dataObjectUpdate['select-cargo-select-state'] ||
+            !dataObjectUpdate['input-cargo-input-weight'] || !dataObjectUpdate['input-cargo-input-volume'] ||
+            !dataObjectUpdate['input-cargo-input-link'] ) {
             alert('Были введены не все данные');
+            return;
         }
+
         updateObject.id = dataObjectUpdate['input-cargo-input-id'];
         updateObject.numberTrackCode = dataObjectUpdate['input-cargo-input-trackcode'];
         updateObject.stateName = dataObjectUpdate['select-cargo-select-state'];
+
+        updateObject.weight = dataObjectUpdate['input-cargo-input-weight'];
+        updateObject.volume = dataObjectUpdate['input-cargo-input-volume'];
+        updateObject.comment = dataObjectUpdate['comment-cargo-comment'];
+        updateObject.link = dataObjectUpdate['input-cargo-input-link'];
+
         updateObject.description = dataObjectUpdate['textarea-cargo-textarea'];
         
         controllerObj.Update(updateObject);

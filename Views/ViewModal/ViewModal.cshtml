@@ -1,0 +1,53 @@
+﻿
+@{
+	Layout = null;
+}
+
+<div class="modal" tabindex="-1" role="dialog" id="modalView">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post" asp-controller="NumberTracks" asp-action="Update" id="formUpdate">
+                <div class="modal-body">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('.close').on("click", () => {
+        $('#modalView').modal('hide');
+    });
+
+    function openViewModal(parametrs) {
+        controllerObj = parametrs.controllerObject;
+        const modal = $('#modalView');
+        if (controllerObj === undefined || parametrs.id === undefined) {
+            alert('Упссс.... что-то пошло не так')
+            return;
+        }
+
+        $.ajax({
+            type: 'GET',
+            url: "/NumberTracks/GetById",
+            data: { "id": parametrs.id },
+            success: function (response) {
+                modal.find(".modal-title").html("<h3>Просмотр трек-кода</h3>");
+                modal.find(".modal-body").html(response);
+                modal.modal('show')
+            },
+            failure: function () {
+                modal.modal('hide')
+            },
+            error: function (response) {
+                alert(response.responseText);
+            }
+        });
+    }
+</script>

@@ -20,6 +20,23 @@ namespace cargosiklink.Controllers
             return View(models);
         }
 
+        public async Task<IActionResult> GetById(Guid id)
+        {
+            if (id == Guid.Empty)
+            {
+                return PartialView();
+            }
+            var response = await _numberTrackService.GetAllTracks();
+            var numberTrack = response.FirstOrDefault(trck => trck.Id == id.ToString());
+            if (numberTrack == null)
+            {
+                return PartialView();
+            }
+            else
+            {
+                return PartialView(numberTrack);
+            }
+        }
         public async Task<IActionResult> GetAll()
         {
             var models = await _numberTrackService.GetAllTracks();
