@@ -67,7 +67,7 @@ namespace cargosiklink.Service
 
         public async Task<IEnumerable<NumberTrackViewModel>> GetAllTracksByUserId(Guid userId)
         {
-            var numberTracks = _baseRepository.GetAll().Where(trck => trck.UserId == userId).ToList();
+            var numberTracks = _baseRepository.GetAll().OrderByDescending(item => item.Date).Where(trck => trck.UserId == userId).ToList();
             if(numberTracks.Count == 0)
             {
                 return new List<NumberTrackViewModel>();
@@ -90,7 +90,7 @@ namespace cargosiklink.Service
 
         public async Task<IEnumerable<NumberTrackViewModel>> GetAllTracks()
         {
-            var numberTracks = _baseRepository.GetAll().ToList();
+            var numberTracks = _baseRepository.GetAll().OrderByDescending(item => item.Date).ToList();
             if (numberTracks.Count == 0)
             {
                 return new List<NumberTrackViewModel>();

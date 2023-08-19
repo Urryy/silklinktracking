@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "d++Nx+AKj4CDtH/1W7Gkv5gDM7S1GorsNiXFihKacBY=",
+  "Hash": "HPw/zb2/hVdpwpI7KOWqjtEj+3IOGi6CcHrnoVIqseY=",
   "Source": "cargosiklink",
   "BasePath": "_content/cargosiklink",
   "Mode": "Default",
@@ -102,12 +102,12 @@
       "OriginalItemSpec": "wwwroot\\img\\cargotitleicon.png"
     },
     {
-      "Identity": "E:\\silklink\\silklinktracking\\wwwroot\\img\\icologocargo.png",
+      "Identity": "E:\\silklink\\silklinktracking\\wwwroot\\img\\icologocargo.ico",
       "SourceId": "cargosiklink",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\silklink\\silklinktracking\\wwwroot\\",
       "BasePath": "_content/cargosiklink",
-      "RelativePath": "img/icologocargo.png",
+      "RelativePath": "img/icologocargo.ico",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -116,7 +116,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\icologocargo.png"
+      "OriginalItemSpec": "wwwroot\\img\\icologocargo.ico"
     },
     {
       "Identity": "E:\\silklink\\silklinktracking\\wwwroot\\js\\NumberTracks.js",
