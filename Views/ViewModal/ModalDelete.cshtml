@@ -33,33 +33,6 @@
         $('#modal').modal('hide');
     });
 
-    function openModal(parameters) {
-        const id = parameters.data;
-        const url = parameters.url;
-        const modal = $('#modal');
-
-        if (id === undefined || url === undefined) {
-            alert('Упссс.... что-то пошло не так')
-            return;
-        }
-
-        $.ajax({
-            type: 'GET',
-            url: url,
-            data: { "id": id },
-            success: function (response) {
-                modal.find(".modal-body").html(response);
-                modal.modal('show')
-            },
-            failure: function () {
-                modal.modal('hide')
-            },
-            error: function (response) {
-                alert(response.responseText);
-            }
-        });
-    };
-
     function openDeleteModal(parameters) {
         idObject = parameters.data;
         controllerObj = parameters.object;
@@ -70,7 +43,7 @@
             return;
         }
         modal.find(".modal-title").html("<h3>Удаление</h3>");
-        modal.find(".modal-body").html("<p>Вы действительно хотите удалить данный номер?</p>");
+        modal.find(".modal-body").html("<p>Вы действительно хотите удалить данный объект?</p>");
         modal.modal('show');
     };
 

@@ -13,6 +13,7 @@
         public string Weight { get; set; }
         public string Volume { get; set; }
         public string Link { get; set; }
+        public string UserCode { get; set; }
         public string Comment { get; set; }
     }
 }

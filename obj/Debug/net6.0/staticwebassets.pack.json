@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\js\\NumberTracks.js"
     },
     {
+      "Id": "E:\\silklink\\silklinktracking\\wwwroot\\js\\User.js",
+      "PackagePath": "staticwebassets\\js\\User.js"
+    },
+    {
       "Id": "E:\\silklink\\silklinktracking\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

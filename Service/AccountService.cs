@@ -1,6 +1,7 @@
 ﻿using cargosiklink.Extensions;
 using cargosiklink.Models;
 using cargosiklink.Models.ViewModel.Account;
+using cargosiklink.Models.ViewModel.User;
 using cargosiklink.Repository.Interfaces;
 using cargosiklink.Service.Interfaces;
 using System.Security.Claims;
@@ -14,6 +15,41 @@ namespace cargosiklink.Service
         {
             _baseRepository = baseRepository;
         }
+
+        public async Task<IEnumerable<UserViewModel>> GetAll()
+        {
+            var users = _baseRepository.GetAll().ToList();
+            if(users.Count == 0)
+            {
+                return new List<UserViewModel>();
+            }
+            var userViewModels = users.Select(item => new UserViewModel
+            {
+                Id = item.Id.ToString(),
+                Name = item.Name,
+                Email = item.Email,
+                Phone = item.Phone,
+                UserCode = item.UserCode,
+                City = item.City
+            });
+
+            return userViewModels;
+        }
+
+        public async Task<bool> Delete(Guid id)
+        {
+            var user = _baseRepository.GetAll().FirstOrDefault(usr => usr.Id == id);
+            if (user == null)
+            {
+                return false;
+            }
+            else
+            {
+                await _baseRepository.Delete(user);
+                return true;
+            }
+        }
+
         public async Task<bool> ChangePassword(string name, ChangePasswordViewModel changePasswordViewModel)
         {
             try

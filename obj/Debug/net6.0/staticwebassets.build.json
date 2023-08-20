@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HPw/zb2/hVdpwpI7KOWqjtEj+3IOGi6CcHrnoVIqseY=",
+  "Hash": "0bnUiE+NTSblTRpAI12q4c+SYRb4ojp8YKPNmT0qyDI=",
   "Source": "cargosiklink",
   "BasePath": "_content/cargosiklink",
   "Mode": "Default",
@@ -151,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "E:\\silklink\\silklinktracking\\wwwroot\\js\\User.js",
+      "SourceId": "cargosiklink",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\silklink\\silklinktracking\\wwwroot\\",
+      "BasePath": "_content/cargosiklink",
+      "RelativePath": "js/User.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\User.js"
     },
     {
       "Identity": "E:\\silklink\\silklinktracking\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

@@ -98,6 +98,7 @@ namespace cargosiklink.Service
             else
             {
                 var states = _stateRepository.GetAll().ToList();
+                var users = _userRepository.GetAll().ToList();
                 var models = numberTracks.Select(track => new NumberTrackViewModel
                 {
                     Date = track.Date.ToShortDateString(),
@@ -111,6 +112,7 @@ namespace cargosiklink.Service
                     Link = track.Link.ToString(),
                     StateId = track.StateId.ToString(),
                     Comment = track.Comment ?? string.Empty,
+                    UserCode = track.User.UserCode
                 });
                 return models;
             }

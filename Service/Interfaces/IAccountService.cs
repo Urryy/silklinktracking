@@ -1,4 +1,5 @@
 ﻿using cargosiklink.Models.ViewModel.Account;
+using cargosiklink.Models.ViewModel.User;
 using System.Security.Claims;
 
 namespace cargosiklink.Service.Interfaces
@@ -12,5 +13,8 @@ namespace cargosiklink.Service.Interfaces
         Task<bool> ChangePassword(string email, ChangePasswordViewModel changePasswordViewModel);
 
         Task<UserInfoViewModel> GetAboutInfo(string name);
+
+        Task<IEnumerable<UserViewModel>> GetAll();
+        Task<bool> Delete(Guid id);
     }
 }
