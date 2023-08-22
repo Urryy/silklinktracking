@@ -28,17 +28,15 @@ namespace cargosiklink.Service
                     return false;
                 }
 
-                if (!double.TryParse(model.Weight.Replace(".",",").Replace(" ", ""), out double weight))
+                if (!double.TryParse(model.Weight.Replace(" ", ""), out double weight))
                 {
                     weight = 0.0;
                 }
-                if (!double.TryParse(model.Volume.Replace(".", ",").Replace(" ",""), out double volume))
+                if (!double.TryParse(model.Volume.Replace(" ",""), out double volume))
                 {
                     volume = 0.0;
                 }
 
-                weight = 0.017;
-                volume = 0.043;
                 var numberTrack = new NumberTrack(model.NumberTrackCode, model.Description, StateConst.StateAddByUser, user.Id, weight, volume, model.Link);
 
                 if (model.Comment != null && model.Comment != string.Empty)
