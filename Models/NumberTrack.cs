@@ -7,8 +7,8 @@
         public DateTime Date { get; set; } = DateTime.Now;
         public string Description { get; set; }
         public string Link { get; set; }
-        public decimal Weight { get; set; }
-        public decimal Volume { get; set; }
+        public double Weight { get; set; }
+        public double Volume { get; set; }
         public string? Comment { get; set; }
 
         public Guid UserId { get; set; }
@@ -20,7 +20,7 @@
 
         public NumberTrack(string numberTrackCode, string description, 
                            Guid stateId, Guid userId,
-                           decimal weight, decimal volume
+                           double weight, double volume
                            , string link)
         {
             Id = Guid.NewGuid();

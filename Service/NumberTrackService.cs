@@ -28,14 +28,15 @@ namespace cargosiklink.Service
                     return false;
                 }
 
-                if (!decimal.TryParse(model.Weight.Replace(".", ","), out decimal weight))
+                if (!double.TryParse(model.Weight.Replace(".",",").Replace(" ", ""), out double weight))
                 {
-                    weight = decimal.Zero;
+                    weight = 0.0;
                 }
-                if (!decimal.TryParse(model.Volume.Replace(".", ","), out decimal volume))
+                if (!double.TryParse(model.Volume.Replace(".", ",").Replace(" ",""), out double volume))
                 {
-                    volume = decimal.Zero;
+                    volume = 0.0;
                 }
+
                 var numberTrack = new NumberTrack(model.NumberTrackCode, model.Description, StateConst.StateAddByUser, user.Id, weight, volume, model.Link);
 
                 if (model.Comment != null && model.Comment != string.Empty)
@@ -125,11 +126,11 @@ namespace cargosiklink.Service
             {
                 return false;
             }
-            if (!decimal.TryParse(model.Weight.Replace(".", ","), out decimal weight))
+            if (!double.TryParse(model.Weight.Replace(".", ","), out double weight))
             {
                 return false;
             }
-            if (!decimal.TryParse(model.Volume.Replace(".", ","), out decimal volume))
+            if (!double.TryParse(model.Volume.Replace(".", ","), out double volume))
             {
                 return false;
             }
