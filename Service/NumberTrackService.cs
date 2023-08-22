@@ -27,11 +27,12 @@ namespace cargosiklink.Service
                 {
                     return false;
                 }
-
+                //На проде работает без Replace(",", ".");
                 if (!double.TryParse(model.Weight.Replace(" ", ""), out double weight))
                 {
                     weight = 0.0;
                 }
+                //На проде работает без Replace(",", ".");
                 if (!double.TryParse(model.Volume.Replace(" ",""), out double volume))
                 {
                     volume = 0.0;
@@ -126,11 +127,11 @@ namespace cargosiklink.Service
             {
                 return false;
             }
-            if (!double.TryParse(model.Weight.Replace(".", ","), out double weight))
+            if (!double.TryParse(model.Weight.Replace(" ", ""), out double weight))
             {
                 return false;
             }
-            if (!double.TryParse(model.Volume.Replace(".", ","), out double volume))
+            if (!double.TryParse(model.Volume.Replace(" ", ""), out double volume))
             {
                 return false;
             }
