@@ -17,23 +17,25 @@
 
                         <div class="mb-3">
                             <label for="input-cargo-input-trackcode" class="form-label">Трек-номер:</label>
-                            <input type="text" class="form-control input-cargo" id="input-cargo-trackcode" name="input-cargo-input-trackcode" required>
+                        <input type="text" class="form-control input-cargo" id="input-cargo-trackcode" name="input-cargo-input-trackcode" required="true">
                         </div>
                         <div class="mb-3">
                             <label for="input-cargo-input-weight" class="form-label">Вес:</label>
-                            <input type="text" class="form-control input-cargo" id="input-cargo-weight" name="input-cargo-input-weight" required>
+                        <input type="text" class="form-control input-cargo" id="input-cargo-weight" name="input-cargo-input-weight" aria-describedby="weightHelpId" required>
+                            <div id="weightHelpId" class="form-text">Вввод веса осуществляется с помощью числовых значение, без букв, например: 50.0</div>
                         </div>
                         <div class="mb-3">
                             <label for="input-cargo-input-volume" class="form-label">Объем:</label>
-                            <input type="text" class="form-control input-cargo" id="input-cargo-volume" name="input-cargo-input-volume" required>
+                        <input type="text" class="form-control input-cargo" id="input-cargo-volume" name="input-cargo-input-volume" aria-describedby="volumeHelpId" required>
+                            <div id="volumeHelpId" class="form-text">Вввод объема осуществляется с помощью числовых значение, без букв, например: 50.0</div>
                         </div>
                         <div class="mb-3">
                             <label for="input-cargo-input-link" class="form-label">Ссылка на товар:</label>
-                            <input type="text" class="form-control input-cargo" id="input-cargo-link" name="input-cargo-input-link" required>
+                        <input type="text" class="form-control input-cargo" id="input-cargo-link" name="input-cargo-input-link" required="true">
                         </div>
                          <div class="mb-3">
                             <label for="textarea-cargo-textarea">Описание:</label>
-                            <textarea class="form-control" id="textarea-cargo-textarea" name="textarea-cargo-textarea" rows="5" cols="33" required></textarea>
+                        <textarea class="form-control" id="textarea-cargo-textarea" name="textarea-cargo-textarea" rows="5" cols="33" required="true"></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="comment-cargo-comment">Комментарий: </label>

@@ -30,11 +30,11 @@ namespace cargosiklink.Service
 
                 if (!decimal.TryParse(model.Weight.Replace(".", ","), out decimal weight))
                 {
-                    return false;
+                    weight = decimal.Zero;
                 }
                 if (!decimal.TryParse(model.Volume.Replace(".", ","), out decimal volume))
                 {
-                    return false;
+                    weight = decimal.Zero;
                 }
                 var numberTrack = new NumberTrack(model.NumberTrackCode, model.Description, StateConst.StateAddByUser, user.Id, weight, volume, model.Link);
 
