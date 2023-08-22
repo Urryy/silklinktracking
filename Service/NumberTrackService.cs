@@ -37,6 +37,8 @@ namespace cargosiklink.Service
                     volume = 0.0;
                 }
 
+                weight = 0.017;
+                volume = 0.043;
                 var numberTrack = new NumberTrack(model.NumberTrackCode, model.Description, StateConst.StateAddByUser, user.Id, weight, volume, model.Link);
 
                 if (model.Comment != null && model.Comment != string.Empty)
