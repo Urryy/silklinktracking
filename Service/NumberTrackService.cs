@@ -34,7 +34,7 @@ namespace cargosiklink.Service
                 }
                 if (!decimal.TryParse(model.Volume.Replace(".", ","), out decimal volume))
                 {
-                    weight = decimal.Zero;
+                    volume = decimal.Zero;
                 }
                 var numberTrack = new NumberTrack(model.NumberTrackCode, model.Description, StateConst.StateAddByUser, user.Id, weight, volume, model.Link);
 
