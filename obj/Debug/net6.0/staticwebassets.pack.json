@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\img\\icologocargo.ico"
     },
     {
+      "Id": "E:\\silklink\\silklinktracking\\wwwroot\\img\\phonecargo.jpg",
+      "PackagePath": "staticwebassets\\img\\phonecargo.jpg"
+    },
+    {
       "Id": "E:\\silklink\\silklinktracking\\wwwroot\\js\\NumberTracks.js",
       "PackagePath": "staticwebassets\\js\\NumberTracks.js"
     },
